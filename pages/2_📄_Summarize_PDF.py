@@ -14,6 +14,8 @@ import deepl
 import tiktoken
 # import my_data
 
+api_key = st.secrets["api_key"]
+
 # OpenAI 라이브러리를 이용해 텍스트를 요약하는 함수
 def summarize_text(user_text, lang="en"):  # lang 인자에 영어를 기본적으로 지정
     # API 키 설정

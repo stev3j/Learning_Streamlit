@@ -8,9 +8,11 @@ import textwrap
 from datetime import datetime
 # import my_data
 
+api_key = st.secrets["api_key"]
+
 def translate_text_for_image(text):
     client = OpenAI(
-        api_key=api_key,
+        api_key=api_key
     )
 
     user_content = text
