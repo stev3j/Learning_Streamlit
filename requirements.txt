@@ -1,3 +1,4 @@
 openai
-PdfReader
+PyPDF2
 tiktoken
+deepl
