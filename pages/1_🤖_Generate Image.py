@@ -6,11 +6,11 @@ import os
 import requests
 import textwrap
 from datetime import datetime
-import my_data
+# import my_data
 
 def translate_text_for_image(text):
     client = OpenAI(
-        api_key=my_data.api_key,
+        api_key=api_key,
     )
 
     user_content = text
@@ -31,7 +31,7 @@ def translate_text_for_image(text):
 
 def generate_text_for_image(text):
     client = OpenAI(
-        api_key=my_data.api_key,
+        api_key=api_key,
     )
 
     user_content = text
@@ -53,7 +53,7 @@ def generate_text_for_image(text):
 
 def generate_image_from_text(text_for_image, image_num=1, image_size="512x512"):
     client = OpenAI(
-        api_key=my_data.api_key,
+        api_key=api_key,
     )
 
     shorten_text_for_image = textwrap.shorten(text_for_image, 1000)
