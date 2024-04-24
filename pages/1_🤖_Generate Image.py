@@ -1,6 +1,5 @@
 # OpenAI 이미지 생성기 웹 앱
 
-# import my_image_gen  # 이미지 생성을 위한 모듈을 임포트
 import streamlit as st
 import openai
 import os
@@ -124,12 +123,12 @@ def download_button_callback():
 
 def button_callback():
     if radio_selected_lang == "한국어":
-        translated_text = my_image_gen.translate_text_for_image(input_text)  # 한국어를 영어로 번역
+        translated_text = translate_text_for_image(input_text)  # 한국어를 영어로 번역
     elif radio_selected_lang == "영어":
         translated_text = input_text
 
     if detail_description == 'Yes':
-        resp = my_image_gen.generate_text_for_image(translated_text)  # 이미지 생성을 위한 상세 묘사 생성
+        resp = generate_text_for_image(translated_text)  # 이미지 생성을 위한 상세 묘사 생성
         text_for_image = resp
         image_caption = "상세 묘사를 추가해 생성한 이미지"
     elif detail_description == 'No':
@@ -140,7 +139,7 @@ def button_callback():
     shorten_text_for_image = textwrap.shorten(text_for_image, 200, placeholder=' [..이하 생략..]')
 
     # 이미지 생성
-    image_urls = my_image_gen.generate_image_from_text(text_for_image, image_num, image_size)
+    image_urls = generate_image_from_text(text_for_image, image_num, image_size)
 
     # 이미지와 다운로드 파일 이름 생성
     images = []
