@@ -9,18 +9,10 @@ import deepl
 
 # 유튜브 동영상 정보와 자막을 가져오기 위한 모듈
 
-from openai import OpenAI
 import yt_dlp
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.formatters import TextFormatter
-import os
 from pathlib import Path
-
-# 텍스트 요약을 위한 모듈
-from openai import OpenAI
-import os
-import deepl
-import tiktoken
 
 api_key = ""
 

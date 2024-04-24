@@ -1,5 +1,5 @@
 # OpenAI 이미지 생성기 웹 앱
-
+from openai import OpenAI
 import streamlit as st
 import openai
 import os
