@@ -12,13 +12,12 @@ from openai import OpenAI
 import os
 import deepl
 import tiktoken
-
-api_key = ""
+import my_data
 
 # OpenAI 라이브러리를 이용해 텍스트를 요약하는 함수
 def summarize_text(user_text, lang="en"):  # lang 인자에 영어를 기본적으로 지정
     # API 키 설정
-    client = OpenAI(api_key=api_key)
+    client = OpenAI(api_key=my_data.api_key)
 
     # 대화 메시지 정의
     if lang == "en":
@@ -65,7 +64,7 @@ def summarize_text_final(text_list, lang='en'):
 # OpenAI 라이브러리를 이용해 영어를 한국어로 번역하는 함수
 def traslate_english_to_korean_using_openAI(text):
     # API 키 설정
-    client = OpenAI(api_key=api_key)
+    client = OpenAI(api_key=my_data.api_key)
 
     # 대화 메시지 정의
     user_content = f"Translate the following English sentences into Korean.\n {text}"
